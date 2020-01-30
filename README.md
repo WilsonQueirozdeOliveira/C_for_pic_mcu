@@ -2,7 +2,7 @@
 
 *BLINK LED RB0
 
-*LCD_16X2 //coming soon
+*LCD_16X2
 
 *SPI //coming soon
 

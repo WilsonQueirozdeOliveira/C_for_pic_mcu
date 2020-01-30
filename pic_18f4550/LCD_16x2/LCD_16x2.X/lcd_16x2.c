@@ -9,14 +9,14 @@
 #include "mcc.h"
 #include "lcd_16x2.h"
 
-void screen_1() {
+void screen_1() {//min 125khz 250khz max 350
 
-//    char cont_screen;
-//    cont_screen++;
-//
-//    if (cont_screen > 250) {//minimun 250kHz
-//
-//        cont_screen = 0;
+    char cont_screen;
+    cont_screen++;
+
+    if (cont_screen > 250) {
+
+        cont_screen = 0;
 
         send_instruction_8bit(cursor_LxC_1x6); //cursor linha 2
         float data = 10.555;
@@ -35,7 +35,7 @@ void screen_1() {
         send_data_char(ch);
         
         send_instruction_8bit(cursor_LxC_1x15);
-//    }
+    }
 }
 
 void send_data_float(float data) {
@@ -71,17 +71,17 @@ void CONFIG_lcd16x2(void) {
      * HD44780U
      * Initialization 4-Bit Interface
      */
-
+    __delay_ms(40);
     //step 1 (0x03)   
     __delay_ms(15); //wait 15ms for 4.5V , wait 40ms for 2.7V 
     send_instruction_4bit(step_1);
 
     //step 2 (0x03)   
-    __delay_ms(5);
+    __delay_ms(5);//wait
     send_instruction_4bit(step_2);
 
     //step 3 (0x03)
-    __delay_us(100);
+    __delay_us(100);//wait
     send_instruction_4bit(step_3);
 
     //step 4 (0x02)
@@ -101,29 +101,8 @@ void CONFIG_lcd16x2(void) {
 
 }
 
-/*Converte um inteiro com sinal ou sem sinal em uma string que sera escrita no LCD*/
-
-//void escreve_inteiro(unsigned int x) {
-//
-//
-//    unsigned char vetor_aux[] = "00000";
-//
-//    unsigned int x_aux = x;
-//    unsigned char j;
-//
-//
-//
-//    for (j = 5; j > 0; j--) {
-//        vetor_aux[j - 1] = (x_aux % 10) + 0x30;
-//        x_aux = x_aux / 10;
-//    }
-//
-//    send_str(vetor_aux);
-//    __delay_us(50);
-//}
-
 void send_instruction_8bit(unsigned char data) {
-    __delay_ms(5);
+    
     start_instruction();
     //high
     D7_LCD = (unsigned) (data & 0x80) >> 7;
@@ -155,7 +134,7 @@ void send_instruction_4bit(unsigned char data) {
 }
 
 void send_data_8bit(unsigned char data) {
-    __delay_ms(5);
+    
     start_data_8_bit();
     //high
     D7_LCD = (unsigned) (data & 0x80) >> 7;
@@ -174,19 +153,20 @@ void send_data_8bit(unsigned char data) {
 }
 
 void E_write(void) {
+    __delay_ms(1);
     E_LCD = 1;
     E_LCD = 0;
 }
 
 void start_instruction(void) {
-
+    __delay_ms(1);
     RS_LCD = 0;
     RW_LCD = 0;
     E_LCD = 0;
 }
 
 void start_data_8_bit(void) {
-
+    __delay_ms(1);
     RS_LCD = 1;
     RW_LCD = 0;
     E_LCD = 0;

@@ -14,7 +14,7 @@ void interrupt isr() {
         INTCONbits.TMR0IF = 0;
         TMR0L = 0x1B;
         TMR0H = 0xD1;
-
+        
         screen_1();
     }
 }
