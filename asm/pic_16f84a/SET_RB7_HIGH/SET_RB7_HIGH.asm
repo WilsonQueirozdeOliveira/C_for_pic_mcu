@@ -40,7 +40,7 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 start:
 			bank1
 			movlw	H'ff'		;w = H'ff'
-			movwf	TRISA		;trisa = H'ff' all imput
+			movwf	TRISA		;trisa = H'ff' all input
 			movlw 	H'7f'		;w = H'7f'
 			movwf	TRISB		;trisb = H'7f' RB7 output
 			bank0
