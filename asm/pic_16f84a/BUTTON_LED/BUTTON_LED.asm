@@ -28,7 +28,7 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 #define		button1 	PORTB,RB0
 
 ;output 
-#define 	led1		PORTB,RB7
+#define 	led1		PORTB,RB1
 
 ;reset vector
 			org		H'0000'		;origin reset adress 0000h
@@ -41,22 +41,22 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 ;main			
 start:
 			bank1
-			movlw	H'ff'		;w = H'ff'
+			movlw	H'ff'		;w = b'11111111'
 			movwf	TRISA		;trisa = H'ff' all imput
-			movlw 	H'7f'		;w = H'7f'
-			movwf	TRISB		;trisb = H'7f' RB7 output
+			movlw 	H'fd'		;w = b'11111101'
+			movwf	TRISB		;trisb = H'fd' RB1 output
 			bank0
 			movlw	H'ff'
 			movwf	PORTB		;all portb output to high
 			
 loop:
-			btfsc	button1		;bit test file RB0 skip if clear
-			goto	off_led1	;if RB0 set : off_led1
-			bsf		led1		;if RB0 clear : bit set file RB7
+			btfsc	button1		;bit test file button1 skip if clear
+			goto	off_led1	;if button1 set : off_led1
+			bsf		led1		;if butoon1 clear : bit set file led1
 			goto	loop
 			
 off_led1:
-			bcf		led1		;clear RB7
+			bcf		led1		;clear led1
 			goto	loop
 			
 			end					;end

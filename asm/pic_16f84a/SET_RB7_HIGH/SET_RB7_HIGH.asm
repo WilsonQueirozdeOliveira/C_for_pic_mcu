@@ -1,4 +1,7 @@
 ;
+;	MPLAB IDE v8.92 compiler MPASM	v5.51
+;
+;
 ;	Date: 09_04_2020
 ;
 ;	Autor : wilson 
@@ -49,5 +52,5 @@ start:
 			
 			goto	$			;infinity loop
 			
-			end					;fim
+			end					;end
 			
