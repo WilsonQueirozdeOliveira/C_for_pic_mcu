@@ -1,9 +1,3 @@
-# C programing for PIC 18F4550
+# Ccdes for pic mcu with
 
-*BLINK LED RB0
-
-*LCD_16X2
-
-*SPI //coming soon
-
-*CAN //coming soon
+    C lenguage end Assembly lenguage
