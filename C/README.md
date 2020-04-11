@@ -1,4 +1,4 @@
-# C programing for PIC 18F4550
+# Codes for pic mcu with C language
 
     BLINK LED RB0
 
