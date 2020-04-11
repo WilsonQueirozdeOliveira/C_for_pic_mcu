@@ -39,7 +39,7 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 			org		H'0004'		;interrupt adress
 			retfie				;return from interrupition
 
-;main			
+;init			
 start:
 			bank1
 			movlw	H'ff'		;w = b'11111111'
@@ -49,7 +49,8 @@ start:
 			bank0
 			movlw	H'f5'
 			movwf	PORTB		;RB1 RB3 START CLEAR
-			
+
+;main			
 loop:
 
 			call	sub_button1
