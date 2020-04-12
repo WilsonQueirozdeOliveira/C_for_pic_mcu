@@ -32,13 +32,13 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 #define 	led1		PORTB,RB1
 #define 	led2		PORTB,RB3
 
-;variable
-		cblock H'000C'
-			
+;variable(General purpose registers)
+cblock	H'000C'
+
 		time0
 		time1
 			
-		endc
+endc	;H'004F'
 
 ;reset vector
 		org		H'0000'		;origin reset adress 0000h
