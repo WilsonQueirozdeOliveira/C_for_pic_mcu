@@ -35,8 +35,8 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF
 ;variable(General purpose registers)
 cblock	H'000C'
 
-		time0
-		time1
+		time0	;adress H'000C'
+		time1	;adress H'000D'
 			
 endc	;H'004F'
 
@@ -72,14 +72,14 @@ loop:
 			
 delay500ms:
 		movlw	D'200'
-		movwf	time0	;adress H'0C'
+		movwf	time0
 			
 		;2-call+1-movlw+1-movwf = 4 cycles
 		;4 cycles of 1us
 			
 aux1:
 		movlw	D'250'
-		movwf	time1	;adress H'0D'
+		movwf	time1
 			
 		;2 cycles (2 x 250 = 500us negligible)
 			
