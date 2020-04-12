@@ -4,6 +4,5 @@
         SET_RB7_HIGH
         BUTTON_LED
         SUBROUTINES
-	DELAY
-
+        DELAY
 ## pic_
