@@ -5,4 +5,5 @@
         BUTTON_LED
         SUBROUTINES
         DELAY
+	ARITHMETIC_INSTRUCTIONS
 ## pic_

@@ -80,7 +80,7 @@ loop:
 
 	movfw	register1
 	subwf	register2,f	;f = register2 - w
-						;register2 = 10 - 20 = 10
+						;register2 = 30 - 20 = 10
 
 	goto	loop
 
