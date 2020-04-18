@@ -21,20 +21,13 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _MCLRE_ON & _BOREN_OFF & _LVP_OFF & _C
 #define	bank0	bcf	STATUS,RP0	;bank0
 #define	bank1	bsf	STATUS,RP0	;bank1
 
-;input
-#define	s1	PORTB,RB0
-
-;output 
-#define	led1	PORTA,RA3
-#define	led2	PORTA,RA2
-
-;const
-v_bouncing	equ	D'250'
-
 ;General purpose registers
 cblock	H'20'
-bouncing		
-endc ;H'6F'
+A0
+B0
+C0
+C1		
+endc
 
 ;reset vector
 org	H'0000'	;origin reset adress 0000h
@@ -52,34 +45,30 @@ start:
 	bank1
 	movlw	H'00'
 	movwf	OPTION_REG
-	movlw	H'13'
-	movwf	TRISA ;config output and input
-	movlw	H'FF'
-	movwf	TRISB
 	bank0
-	bsf	led1
-	bcf	led2
-		
-	bank0
-	clrf	bouncing
-
-;	goto	$ ;"loop of nop" for interrupt projects
-
-;main			
-loop:
-
-	movlw	v_bouncing
-	movwf	bouncing
 	
-test_butt:
+	movlw	D'50'
+	movwf	A0
+	movlw	D'55'
+	movwf	B0
+	call	mult	;A0*BO = <C1:C0>
 
-	btfsc	s1
-	goto	loop
-	decfsz	bouncing,f
-	goto	test_butt
-	
-	comf	PORTA
-	
-	goto	loop
+	goto	$ ;"loop of nop" for interrupt projects
+
+mult:
+	clrf	C0
+	clrf	C1
+	movf	A0,w
+	movwf	C0
+
+loop_mult:
+	decf	B0,f
+	btfsc	STATUS,Z
+	return
+	movf	A0,w
+	addwf	C0,f
+	btfsc	STATUS,C
+	incf	C1,f
+	goto	loop_mult
 	
 	end

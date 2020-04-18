@@ -11,4 +11,4 @@
 ## pic_16f628a:
         INPUT_OUTPUT
         SWITCH_DEBOUNCING
-        
+        MULTIPLICATION
