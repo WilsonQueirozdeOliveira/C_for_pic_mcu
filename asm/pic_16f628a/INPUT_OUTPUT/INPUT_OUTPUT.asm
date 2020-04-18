@@ -1,8 +1,6 @@
 ;
 ;	MPLAB IDE v8.92 compiler MPASM	v5.51
 ;
-;	Date: 18_04_2020
-;
 ;	Autor : wilson Tecnologia
 ;
 ;	Assembly
@@ -24,7 +22,7 @@ __config _XT_OSC & _WDT_OFF & _PWRTE_ON & _MCLRE_ON & _BOREN_OFF & _LVP_OFF & _C
 #define	bank1	bsf	STATUS,RP0	;bank1
 
 ;input
-#define	S1	PORTB,RB0
+#define	s1	PORTB,RB0
 
 ;output 
 #define	led1	PORTA,RA3
@@ -52,6 +50,8 @@ start:
 	movlw	H'07'
 	movwf	CMCON ;config as digital RA0:RA3 pins
 	bank1
+	movlw	H'00'
+	movwf	OPTION_REG
 	movlw	H'13'
 	movwf	TRISA ;config output and input
 	movlw	H'FF'
@@ -68,7 +68,13 @@ start:
 
 ;main			
 loop:
-
+	btfss	s1
+po	goto	led1ON
+	bcf	led1
+	goto	loop
+	
+led1ON:
+	bsf	led1
 	goto	loop
 	
 	end
