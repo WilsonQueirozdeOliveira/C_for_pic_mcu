@@ -14,3 +14,4 @@
         MULTIPLICATION
         INVERT_BIT
         DIVISION
+        INTERRUPT
