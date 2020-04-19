@@ -2,3 +2,9 @@
 
     C lenguage
     Assembly lenguage
+
+# MCUs
+
+    PIC16F84A
+    PIC16F628A
+    PIC18F4550
