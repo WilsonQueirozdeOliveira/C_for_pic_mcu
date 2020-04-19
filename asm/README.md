@@ -21,5 +21,6 @@
         Butt_INT_TIMER0
         TIMER_TIMER0
         EXTERNAL_INT
+        INT_STATE_CHANDE
 
 ## pic_18f4550
