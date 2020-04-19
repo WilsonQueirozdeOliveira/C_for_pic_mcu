@@ -19,3 +19,4 @@
         INTERRUPT_TIMER0
         Blink_INT_TIMER0
         Butt_INT_TIMER0
+        TIMER_TIMER0
