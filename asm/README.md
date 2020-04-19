@@ -16,3 +16,4 @@
         DIVISION
         INTERRUPT
         TIMER0
+        INTERRUPT_TIMER0
