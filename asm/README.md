@@ -22,5 +22,6 @@
         TIMER_TIMER0
         EXTERNAL_INT
         INT_STATE_CHANDE
+        INT_TIMER2
 
 ## pic_18f4550
