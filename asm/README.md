@@ -15,3 +15,4 @@
         INVERT_BIT
         DIVISION
         INTERRUPT
+        TIMER0
