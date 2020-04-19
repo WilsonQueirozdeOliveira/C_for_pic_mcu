@@ -13,3 +13,4 @@
         SWITCH_DEBOUNCING
         MULTIPLICATION
         INVERT_BIT
+        DIVISION
