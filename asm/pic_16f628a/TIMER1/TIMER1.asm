@@ -108,3 +108,4 @@ start:
 
 ;cycle_machine = (1/fosc) = (1/4000000) = 1us
 
+;timer1_overflow = (65536 - TMR1) * 1us * preecaler(T1CKPS)
