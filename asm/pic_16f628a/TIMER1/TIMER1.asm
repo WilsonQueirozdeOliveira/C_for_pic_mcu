@@ -54,6 +54,12 @@ btfss	PIR1,TMR1IF
 goto	exit_isr
 bcf	PIR1,TMR1IF
 
+movlw	h'00'
+movwf	TMR1L
+	
+movlw	h'00'
+movwf	TMR1H
+
 ;execute comands
 comf	PORTB
 
