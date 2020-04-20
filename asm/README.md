@@ -25,5 +25,6 @@
         INT_TIMER2
         PWM
         Duty_LED_PWM
+        PWM_10bits
 
 ## pic_18f4550
