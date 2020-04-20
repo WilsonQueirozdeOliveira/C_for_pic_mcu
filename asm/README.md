@@ -23,5 +23,6 @@
         EXTERNAL_INT
         INT_STATE_CHANDE
         INT_TIMER2
+        PWM
 
 ## pic_18f4550
