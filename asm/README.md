@@ -24,5 +24,6 @@
         INT_STATE_CHANDE
         INT_TIMER2
         PWM
+        Duty_LED_PWM
 
 ## pic_18f4550
