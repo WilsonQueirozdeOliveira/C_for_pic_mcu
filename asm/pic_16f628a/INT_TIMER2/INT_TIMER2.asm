@@ -92,8 +92,8 @@ start:
 	movlw	H'02'
 	movwf	PIR1
 	
-	movlw	H'88'
-	movwf	INTCON
+	movlw	H'C0'
+	movwf	INTCON	;enable peripheral interrupt
 	
 
 
