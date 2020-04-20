@@ -26,5 +26,6 @@
         PWM
         Duty_LED_PWM
         PWM_10bits
+        TIMER1
 
 ## pic_18f4550
