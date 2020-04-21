@@ -32,5 +32,6 @@
         WDT
         COMPARATOR
         Vref_COMP
+        ANALOG_OUTPUT
 
 ## pic_18f4550
