@@ -33,5 +33,6 @@
         COMPARATOR
         Vref_COMP
         ANALOG_OUTPUT
+        DAC_4bits
 
 ## pic_18f4550
