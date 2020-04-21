@@ -29,5 +29,6 @@
         TIMER1
         OCILLATORS_TIMER1
         PRECISION_TIMER
+        WDT
 
 ## pic_18f4550

@@ -160,4 +160,4 @@ start:
 ; and reset timer preset
 ;	total 11 instructions
 ; New preset = (500 - 12)-65536 = 65048 = h'FE18'
-;NEW PRESET = h'FE18'
+;NEW PRESET = h'FE18' 
