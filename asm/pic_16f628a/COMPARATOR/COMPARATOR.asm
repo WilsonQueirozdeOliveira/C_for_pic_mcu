@@ -102,6 +102,5 @@ loop:
 	goto	loop
 	
 	end
-	
 
 ;cycle_machine = (1/fosc) = (1/4000000) = 1us 
