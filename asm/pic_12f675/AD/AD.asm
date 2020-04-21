@@ -5,34 +5,33 @@
 ;
 ;	Assembly
 ;
-;	PIC16F628a Clock 4MHz
+;	PIC12F675 Clock 4MHz
 ;
 ;	PIC16 35 instruction set
 
-list p=16f628a
+list p=12f675
 
-#include <p16f628a.inc>
+#include <p12f675.inc>
 
 ;fuse bits
 ; _XT_OSC = 4MHz 1us of machine cycle
-__config _XT_OSC & _WDT_OFF & _PWRTE_ON & _MCLRE_OFF & _BOREN_OFF & _LVP_OFF & _CPD_OFF & _CP_OFF
+__config _INTRC_OSC_NOCLKOUT & _WDT_OFF & _PWRTE_ON & _MCLRE_OFF & _BOREN_OFF & _CPD_OFF & _CP_OFF
 
 ;register bank select memory map
 #define	bank0	bcf	STATUS,RP0	;bank0
 #define	bank1	bsf	STATUS,RP0	;bank1
 
 ;output/INPUT
-#define	LED1	PORTA,RA3
-#define	LED2	PORTA,RA2
-#define	out	PORTB,RB4
-;/
-#define	s1	PORTB,RB0
-#define	s2	PORTA,RA5
+#define	pot	GPIO,GP0 ;AN0
+#define	out	GPIO,GP5
+
 
 ;General purpose registers
 cblock	H'20'
 w_temp
 status_temp
+T0
+value_adc
 endc
 
 ;reset vector
@@ -51,19 +50,11 @@ movwf	status_temp
 
 ;interrupt_ISR
 ;---check interruption
-btfss	PIR1,CMIF
-goto	exit_isr
-bcf	PIR1,CMIF
+
 ;---end check interruption
 
 ;execute comands
-btfsc	CMCON,C1OUT
-goto	out_high
-bcf	out
-goto	exit_isr
 
-out_high:
-	bsf	out
 ;end comands
 ;end interrupt_ISR
 
@@ -78,29 +69,60 @@ retfie
 ;init			
 start:
 	bank1
-	movlw	h'40'
-	movwf	OPTION_REG
+	movlw	h'11'
+	movwf	ANSEL
 	
-	movlw	h'F9'
-	movwf	TRISA
-	
-	movlw	h'EF'
-	movwf	TRISB
-	
-	movlw	H'40'
-	movwf	PIE1
+	movlw	h'DF'
+	movwf	TRISIO
 
 	bank0
-	movlw	h'04'
+	bcf	out
+	
+	movlw	h'07'
 	movwf	CMCON
 	
-	movlw	h'c0'
-	movwf	INTCON
+	movlw	h'01'
+	movwf	ADCON0
+	
+	movlw	h'64'
+	movwf	T0
 
+	movlw	h'80'
+	movwf	value_adc
+	
 loop:
-
+	bsf	ADCON0,GO_DONE
+	
+wait_adc:
+	btfsc	ADCON0,GO_DONE
+	goto	wait_adc
+	
+	movf	ADRESH,W
+	
+	andwf	value_adc,w
+	btfsc	STATUS,Z
+	goto	out_high
+	bcf	 out
+	goto continua
+	
+out_high:
+	bsf	out
+	
+continua:
+	movlw	h'64'
+	movwf	T0
+	
+	call	_100us
+	call	_100us
+	call	_100us
+	call	_100us
+	call	_100us
+	
 	goto	loop
 	
+_100us:
+	decfsz	T0,f
+	goto	_100us
+	return
+	
 	end
-
-;cycle_machine = (1/fosc) = (1/4000000) = 1us 
