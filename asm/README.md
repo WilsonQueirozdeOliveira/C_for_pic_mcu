@@ -1,6 +1,10 @@
 # Codes for pic mcu with assembly language
 
+## pic_18f4550
+
 ## pic_16f84a:
+MPLAB IDE v8.92 compiler MPASM	v5.51
+
         SET_RB7_HIGH
         BUTTON_LED
         SUBROUTINES
@@ -9,6 +13,8 @@
         LOGIC_INSTRUCTIONS
         CONDITIONAL_INSTRUCTIONS
 ## pic_16f628a:
+MPLAB IDE v8.92 compiler MPASM	v5.51
+
         INPUT_OUTPUT
         SWITCH_DEBOUNCING
         MULTIPLICATION
@@ -37,4 +43,4 @@
 ## pic_12f675:
         AD
 
-## pic_18f4550
+
