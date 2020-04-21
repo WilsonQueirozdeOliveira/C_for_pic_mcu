@@ -1,9 +1,10 @@
 # Codes for pic mcu with assembly language
 
-## pic_18f4550
+## pic_18f4550:
+IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
 
 ## pic_16f84a:
-MPLAB IDE v8.92 compiler MPASM	v5.51
+MPLAB IDE v8.92 compiler MPASM	v5.51 (WR Kits classes)
 
         SET_RB7_HIGH
         BUTTON_LED
@@ -13,7 +14,7 @@ MPLAB IDE v8.92 compiler MPASM	v5.51
         LOGIC_INSTRUCTIONS
         CONDITIONAL_INSTRUCTIONS
 ## pic_16f628a:
-MPLAB IDE v8.92 compiler MPASM	v5.51
+MPLAB IDE v8.92 compiler MPASM	v5.51 (WR Kits classes)
 
         INPUT_OUTPUT
         SWITCH_DEBOUNCING
@@ -41,6 +42,8 @@ MPLAB IDE v8.92 compiler MPASM	v5.51
         ANALOG_OUTPUT
         DAC_4bits
 ## pic_12f675:
+MPLAB IDE v8.92 compiler MPASM	v5.51 (WR Kits classes)
+
         AD
 
 
