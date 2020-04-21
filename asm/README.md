@@ -34,5 +34,7 @@
         Vref_COMP
         ANALOG_OUTPUT
         DAC_4bits
+## pic_12f675:
+        AD
 
 ## pic_18f4550
