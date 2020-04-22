@@ -41,6 +41,9 @@ MPLAB IDE v8.92 compiler MPASM	v5.51 (WR Kits classes)
         Vref_COMP
         ANALOG_OUTPUT
         DAC_4bits
+        Display_F
+        Display_FF
+
 ## pic_12f675:
 MPLAB IDE v8.92 compiler MPASM	v5.51 (WR Kits classes)
 
