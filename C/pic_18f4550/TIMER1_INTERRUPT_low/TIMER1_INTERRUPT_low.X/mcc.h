@@ -1,8 +1,8 @@
 /* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   mcc.h
  * Author: Wilson Queiroz
- * Comments:
- * Revision history: 
+ * 
+ * 
  */
 
 #include <xc.h>

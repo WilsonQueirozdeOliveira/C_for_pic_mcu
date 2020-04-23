@@ -1,7 +1,7 @@
 /*IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   mcc.c
- * Author: wilson
- *
+ * Author: Wilson Queiroz
+ * 
  * 
  */
 
