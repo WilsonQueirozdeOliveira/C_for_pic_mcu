@@ -1,8 +1,8 @@
 /*IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   main.c
- * Author: wilson
- *
- * Created on 21 de Abril de 2020, 22:49
+ * Author: Wilson Queiroz
+ * 
+ * 
  */
 
 
