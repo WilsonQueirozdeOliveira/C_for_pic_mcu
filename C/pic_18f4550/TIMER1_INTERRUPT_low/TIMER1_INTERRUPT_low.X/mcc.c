@@ -23,12 +23,10 @@ void CONFIG_mcc(void) {
     /*config timer1*/
     
    /*config_interrupt*/
-    PIE1bits.TMR1IE = 1;
-    RCONbits.IPEN=1;
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCON3bits.INT1IE = 1;
-    INTCON3bits.INT1IF = 0;
-    INTCON3bits.INT1IP = 0;
+    IPR1bits.TMR1IP = 0;
+    PIE1bits.TMR1IE = 1;
+    INTCONbits.GIE_GIEH = 1;
+    INTCONbits.PEIE_GIEL = 1;    
    /*config_interrupt*/
 }
