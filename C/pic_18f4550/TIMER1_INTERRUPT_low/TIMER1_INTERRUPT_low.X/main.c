@@ -12,7 +12,7 @@
 void interrupt low_priority   LowIsr(void){
     if (PIE1bits.TMR1IE && PIR1bits.TMR1IF){
         PIR1bits.TMR1IF = 0;
-        TMR1 = 0xFF00;
+        TMR1 = preset_TMR1;
         LED = !LED;
     }
 }

@@ -18,7 +18,7 @@ void CONFIG_mcc(void) {
 
     /*config timer1*/
     T1CONbits.TMR1ON = 1;
-    TMR1 = 0xFFF0;
+    TMR1 = preset_TMR1;
     
     /*config timer1*/
     
@@ -27,8 +27,6 @@ void CONFIG_mcc(void) {
     RCONbits.IPEN=1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.GIE_GIEH = 1;
-    INTCONbits.PEIE_GIEL = 1;
     INTCON3bits.INT1IE = 1;
     INTCON3bits.INT1IF = 0;
     INTCON3bits.INT1IP = 0;

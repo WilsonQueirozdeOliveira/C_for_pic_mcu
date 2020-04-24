@@ -11,6 +11,7 @@
 #define _XTAL_FREQ 48000000
 
 #define LED  LATAbits.LA0
+#define preset_TMR1 0xFFA0 
 
 void CONFIG_mcc(void);
 
