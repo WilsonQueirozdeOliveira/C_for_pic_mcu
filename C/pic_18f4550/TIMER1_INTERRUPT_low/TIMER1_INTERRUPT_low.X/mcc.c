@@ -12,14 +12,12 @@
 void CONFIG_mcc(void) {
 
     /*config IO*/
-    TRISA = 0x00;
-    LED = 1;
+    TRIS_LED = 0;
     /*config IO*/
 
     /*config timer1*/
     T1CONbits.TMR1ON = 1;
     TMR1 = preset_TMR1;
-    
     /*config timer1*/
     
    /*config_interrupt*/

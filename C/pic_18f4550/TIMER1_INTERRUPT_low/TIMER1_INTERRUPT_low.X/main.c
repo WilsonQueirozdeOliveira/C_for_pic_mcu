@@ -9,11 +9,11 @@
 #include <xc.h>
 #include "mcc.h"
 
-void interrupt low_priority   LowIsr(void){
+__interrupt (low_priority) void low_ISR(void){
     if (PIE1bits.TMR1IE && PIR1bits.TMR1IF){
         PIR1bits.TMR1IF = 0;
         TMR1 = preset_TMR1;
-        LED = !LED;
+        LED = (unsigned char) !LED;
     }
 }
 void main(void) {

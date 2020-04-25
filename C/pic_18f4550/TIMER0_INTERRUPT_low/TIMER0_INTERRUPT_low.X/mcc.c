@@ -5,19 +5,18 @@
  * Created on 21 de Abril de 2020, 22:48
  */
 
-
 #include <xc.h>
 #include "mcc.h"
 
 void CONFIG_mcc(void) {
 
     /*config IO*/
-    TRISA = 0x00;
-    LED = 1;
+    TRIS_LED = 0;
     /*config IO*/
 
-    /*config timer0*/                 //8bits
+    /*config timer0*/                 
     T0CONbits.TMR0ON = 1;
+    T0CONbits.T08BIT = 0;   //16bits
     T0CONbits.T0CS = 0;
     TMR0 = preset_TMR0;
     /*config timer0*/

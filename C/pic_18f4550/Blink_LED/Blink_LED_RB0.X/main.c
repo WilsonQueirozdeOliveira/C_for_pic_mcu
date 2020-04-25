@@ -1,16 +1,16 @@
-/*
- * File:   main.c
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
+ * File:    main.c
  * Author: Wilson
  *
- * Created on 10 de Novembro de 2019, 09:46
+ * 
  */
 #include <xc.h>
 #include "mcc.h"
 
-int main(void) {
+void main(void) {
     CONFIG_mcc();
     while (1) {
-        blink_LED_ms(100);
+        blink_LED();
     }
     return;
 }

@@ -5,15 +5,14 @@
  *
  */
 
-
 #include <xc.h>
 #include "mcc.h"
 
-void interrupt low_priority   LowIsr(void){
+__interrupt (low_priority) void low_ISR(void){
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
         INTCONbits.TMR0IF = 0;
         TMR0 = preset_TMR0;
-        LED = !LED;
+        LED = (unsigned char) !LED;
     }
 }
 void main(void) {
