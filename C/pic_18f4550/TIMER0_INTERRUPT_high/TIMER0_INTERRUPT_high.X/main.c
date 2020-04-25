@@ -8,6 +8,13 @@
 #include <xc.h>
 #include "mcc.h"
 
+__interrupt (high_priority) void high_ISR(void){
+    if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
+        INTCONbits.TMR0IF = 0;
+        TMR0 = preset_TMR0;
+        LED = (unsigned char) !LED;
+    }
+}
 __interrupt (low_priority) void low_ISR(void){
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
         INTCONbits.TMR0IF = 0;

@@ -22,10 +22,11 @@ void CONFIG_mcc(void) {
     /*config timer0*/
     
    /*config_interrupt*/
+    RCONbits.IPEN = 1; 
     INTCONbits.GIE = 1;
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE_GIEH = 1;
     INTCONbits.PEIE_GIEL = 1; 
-    INTCON2bits.TMR0IP = 0;
+    INTCON2bits.TMR0IP = 1; // TIMER1 high_priority
    /*config_interrupt*/
 }
