@@ -1,37 +1,42 @@
-/*
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   lcd_16x2.c
  * Author: Wilson
  *
- * Created on 10 de Novembro de 2019, 09:46
+ *
  */
 
-#include <xc.h>
 #include "mcc.h"
 #include "lcd_16x2.h"
 
-void screen_1() {//min 125khz 250khz max 350
-
+void screen_1() {
+    /*
+     * LCD min 125khz max 250khz  
+     * TIMER0 cycle = 5ms  -> TMR0 = preset_TMR0; -> mcc.h
+     * screen_n() took 100ms to execute
+     * screen_n_refresh  -> lcd_16x2.h
+     * delay until refresh = screen_n_refresh * TIMER0 cycle
+     */
     char cont_screen;
     cont_screen++;
 
-    if (cont_screen > 250) {
+    if (cont_screen > screen_1_refresh) {
 
         cont_screen = 0;
 
         send_instruction_8bit(cursor_LxC_1x6); //cursor linha 2
-        float data = 10.555;
+        float data = 32.555555;
         send_data_float(data);
 
-        send_instruction_8bit(cursor_LxC_1x0); //cursor linha 2
-        unsigned int ten = 10;
-        send_data_un_int(ten);
+        send_instruction_8bit(cursor_LxC_0x12); //cursor linha 2
+        unsigned int integer = -100;
+        send_data_int(integer);
 
         send_instruction_8bit(cursor_LxC_0x0);
-        char text[] ="Wilson Queiroz";
+        char text[] ="LCD Wilson";
         send_str(text);
         
-        send_instruction_8bit(cursor_LxC_0x15);
-        unsigned char ch = 8;
+        send_instruction_8bit(cursor_LxC_1x0);
+        unsigned char ch = 0xAA;
         send_data_char(ch);
         
         send_instruction_8bit(cursor_LxC_1x15);
@@ -51,7 +56,7 @@ void send_data_char(unsigned char data) {
     send_str(buf);
 }
 
-void send_data_un_int(unsigned int data) {
+void send_data_int(unsigned int data) {
     char buf[10];
     utoa(buf, data, 10);
     send_str(buf);
@@ -105,17 +110,17 @@ void send_instruction_8bit(unsigned char data) {
     
     start_instruction();
     //high
-    D7_LCD = (unsigned) (data & 0x80) >> 7;
-    D6_LCD = (unsigned) (data & 0x40) >> 6;
-    D5_LCD = (unsigned) (data & 0x20) >> 5;
-    D4_LCD = (unsigned) (data & 0x10) >> 4;
+    D7_LCD = (unsigned char) (data & 0x80) >> 7;
+    D6_LCD = (unsigned char) (data & 0x40) >> 6;
+    D5_LCD = (unsigned char) (data & 0x20) >> 5;
+    D4_LCD = (unsigned char) (data & 0x10) >> 4;
 
     E_write();
     //low
-    D7_LCD = (unsigned) (data & 0x08) >> 3;
-    D6_LCD = (unsigned) (data & 0x04) >> 2;
-    D5_LCD = (unsigned) (data & 0x02) >> 1;
-    D4_LCD = (unsigned) (data & 0x01);
+    D7_LCD = (unsigned char) (data & 0x08) >> 3;
+    D6_LCD = (unsigned char) (data & 0x04) >> 2;
+    D5_LCD = (unsigned char) (data & 0x02) >> 1;
+    D4_LCD = (unsigned char) (data & 0x01);
 
     E_write();
 
@@ -125,10 +130,10 @@ void send_instruction_4bit(unsigned char data) {
 
     start_instruction();
     //low
-    D7_LCD = (unsigned) (data & 0x08) >> 3;
-    D6_LCD = (unsigned) (data & 0x04) >> 2;
-    D5_LCD = (unsigned) (data & 0x02) >> 1;
-    D4_LCD = (unsigned) (data & 0x01);
+    D7_LCD = (unsigned char) (data & 0x08) >> 3;
+    D6_LCD = (unsigned char) (data & 0x04) >> 2;
+    D5_LCD = (unsigned char) (data & 0x02) >> 1;
+    D4_LCD = (unsigned char) (data & 0x01);
 
     E_write();
 }
@@ -137,17 +142,17 @@ void send_data_8bit(unsigned char data) {
     
     start_data_8_bit();
     //high
-    D7_LCD = (unsigned) (data & 0x80) >> 7;
-    D6_LCD = (unsigned) (data & 0x40) >> 6;
-    D5_LCD = (unsigned) (data & 0x20) >> 5;
-    D4_LCD = (unsigned) (data & 0x10) >> 4;
+    D7_LCD = (unsigned char) (data & 0x80) >> 7;
+    D6_LCD = (unsigned char) (data & 0x40) >> 6;
+    D5_LCD = (unsigned char) (data & 0x20) >> 5;
+    D4_LCD = (unsigned char) (data & 0x10) >> 4;
 
     E_write();
     //low
-    D7_LCD = (unsigned) (data & 0x08) >> 3;
-    D6_LCD = (unsigned) (data & 0x04) >> 2;
-    D5_LCD = (unsigned) (data & 0x02) >> 1;
-    D4_LCD = (unsigned) (data & 0x01);
+    D7_LCD = (unsigned char) (data & 0x08) >> 3;
+    D6_LCD = (unsigned char) (data & 0x04) >> 2;
+    D5_LCD = (unsigned char) (data & 0x02) >> 1;
+    D4_LCD = (unsigned char) (data & 0x01);
 
     E_write();
 }

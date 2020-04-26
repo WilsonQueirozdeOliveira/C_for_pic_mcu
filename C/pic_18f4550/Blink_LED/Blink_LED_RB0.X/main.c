@@ -1,10 +1,10 @@
 /* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
- * File:    main.c
+ * File:   main.c
  * Author: Wilson
  *
  * 
  */
-#include <xc.h>
+
 #include "mcc.h"
 
 void main(void) {

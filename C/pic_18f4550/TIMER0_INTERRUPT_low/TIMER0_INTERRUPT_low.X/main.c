@@ -1,11 +1,10 @@
-/*IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   main.c
  * Author: wilson
  *
  *
  */
 
-#include <xc.h>
 #include "mcc.h"
 
 __interrupt (low_priority) void low_ISR(void){

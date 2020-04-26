@@ -2,10 +2,9 @@
  * File:   mcc.c
  * Author: Wilson
  *
- * Created on 10 de Novembro de 2019, 09:46
+ *
  */
 
-#include <xc.h>
 #include "mcc.h"
 
 void CONFIG_mcc(void) {

@@ -1,32 +1,28 @@
-/*
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   main.c
  * Author: Wilson
- *
- * Created on 10 de Novembro de 2019, 09:46
+ * 
+ * For CPU Fatec
  */
 
-#include <xc.h>
 #include "mcc.h"
 
-void interrupt isr() {
-
+__interrupt (low_priority) void low_ISR(void) {
     if (INTCONbits.T0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0L = 0x1B;
-        TMR0H = 0xD1;
+        TMR0 = preset_TMR0;
+        LED = (unsigned char) !LED;
+        screen_1(); 
     }
 }
 
-int main(void) {
-
-    //Initializations systems
+void main(void) {
+    /*Initializations systems*/
     CONFIG_mcc();
     CONFIG_lcd16x2();
-
-    //Variables
-
+    /*Variables*/
     while (1) {
-        screen_1();
+        
     }
     return;
 }

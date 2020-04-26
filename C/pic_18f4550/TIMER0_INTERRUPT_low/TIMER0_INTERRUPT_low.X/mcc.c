@@ -1,4 +1,4 @@
-/*IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   mcc.c
  * Author: wilson
  *
@@ -21,11 +21,11 @@ void CONFIG_mcc(void) {
     TMR0 = preset_TMR0;
     /*config timer0*/
     
-   /*config_interrupt*/
+    /*config_interrupt*/
     INTCONbits.GIE = 1;
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE_GIEH = 1;
     INTCONbits.PEIE_GIEL = 1; 
     INTCON2bits.TMR0IP = 0;
-   /*config_interrupt*/
+    /*config_interrupt*/
 }

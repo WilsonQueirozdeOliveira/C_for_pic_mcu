@@ -1,18 +1,19 @@
-/*
+/* IDE: MPLAB X v3.65 Compiler XC8(Free Mode) V1.45
  * File:   map_lcd_16x2.h
  * Author: Wilson
  *
- * Created on 10 de Novembro de 2019, 09:46
- */
-
-#ifndef __MAP_LCD_16x2_H
-#define	__MAP_LCD_16x2_H
-
-/*
- * map lcd 16x2
- * model = HD44780U
  * 
  */
+
+/*map lcd 16x2
+ * model = HD44780U
+ */
+
+/*initialization instructions*/
+#define step_1 0x03
+#define step_2 0x03
+#define step_3 0x03
+#define step_4 0x02
 
 //step 5
 #define lcd_16x2_2lines_4bits_5x8dots 0x28
@@ -56,9 +57,10 @@
  * Sets entire display (D) on/off,
  * cursor on/off (C),
  * and blinking of cursor position character (B).
- * */
+ * 
+ * initialization instructions*/
 
-/* line   x0xx xxxx
+/* line        x0xx xxxx
  * column xxxx 0000
  */
 #define cursor_LxC_0x0 0x80
@@ -77,7 +79,8 @@
 #define cursor_LxC_0x13 0x8D
 #define cursor_LxC_0x14 0x8E
 #define cursor_LxC_0x15 0x8F
-/* line   x1xx xxxx
+
+/* line        x1xx xxxx
  * column xxxx 1111
  */
 #define cursor_LxC_1x0 0xC0
@@ -96,5 +99,3 @@
 #define cursor_LxC_1x13 0xCD
 #define cursor_LxC_1x14 0xCE
 #define cursor_LxC_1x15 0xCF
-
-#endif
