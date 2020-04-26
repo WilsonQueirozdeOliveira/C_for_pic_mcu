@@ -26,7 +26,7 @@
 #pragma config VREGEN = OFF     // USB Voltage Regulator Enable bit (USB voltage regulator disabled)
 
 // CONFIG2H
-#pragma config WDT = ON         // Watchdog Timer Enable bit (WDT enabled)
+#pragma config WDT = OFF        // Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
 #pragma config WDTPS = 32768    // Watchdog Timer Postscale Select bits (1:32768)
 
 // CONFIG3H
@@ -76,8 +76,6 @@
 
 #include <xc.h>
 
-//__CONFIG(1,RC & OSCEN)
-
 #define _XTAL_FREQ 48000000
 
 #define TRIS_LED  TRISBbits.TRISB0
@@ -85,4 +83,3 @@
 
 void CONFIG_mcc(void);
 void blink_LED(void);
-
