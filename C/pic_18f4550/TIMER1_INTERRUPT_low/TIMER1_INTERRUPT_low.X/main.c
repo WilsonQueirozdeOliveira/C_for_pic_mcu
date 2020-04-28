@@ -5,8 +5,6 @@
  * 
  */
 
-
-#include <xc.h>
 #include "mcc.h"
 
 __interrupt (low_priority) void low_ISR(void){

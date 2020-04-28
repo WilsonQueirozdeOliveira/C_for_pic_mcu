@@ -5,7 +5,6 @@
  * Created on 21 de Abril de 2020, 22:48
  */
 
-#include <xc.h>
 #include "mcc.h"
 
 void CONFIG_mcc(void) {

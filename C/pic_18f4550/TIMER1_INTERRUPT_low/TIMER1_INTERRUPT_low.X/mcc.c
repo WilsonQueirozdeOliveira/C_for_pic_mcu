@@ -5,8 +5,6 @@
  * 
  */
 
-
-#include <xc.h>
 #include "mcc.h"
 
 void CONFIG_mcc(void) {
