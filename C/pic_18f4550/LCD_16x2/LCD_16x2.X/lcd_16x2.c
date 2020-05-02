@@ -110,17 +110,17 @@ void send_instruction_8bit(unsigned char data) {
     
     start_instruction();
     //high
-    D7_LCD = (unsigned char) (data & 0x80) >> 7;
-    D6_LCD = (unsigned char) (data & 0x40) >> 6;
-    D5_LCD = (unsigned char) (data & 0x20) >> 5;
-    D4_LCD = (unsigned char) (data & 0x10) >> 4;
+    D7_LCD = (unsigned) (data & 0x80) >> 7;
+    D6_LCD = (unsigned) ( data & 0x40) >> 6;
+    D5_LCD = (unsigned) ( data & 0x20) >> 5;
+    D4_LCD = (unsigned) ( data & 0x10) >> 4;
 
     E_write();
     //low
-    D7_LCD = (unsigned char) (data & 0x08) >> 3;
-    D6_LCD = (unsigned char) (data & 0x04) >> 2;
-    D5_LCD = (unsigned char) (data & 0x02) >> 1;
-    D4_LCD = (unsigned char) (data & 0x01);
+    D7_LCD = (unsigned) (data & 0x08) >> 3;
+    D6_LCD = (unsigned) (data & 0x04) >> 2;
+    D5_LCD = (unsigned) (data & 0x02) >> 1;
+    D4_LCD = (unsigned) (data & 0x01);
 
     E_write();
 
@@ -130,10 +130,10 @@ void send_instruction_4bit(unsigned char data) {
 
     start_instruction();
     //low
-    D7_LCD = (unsigned char) (data & 0x08) >> 3;
-    D6_LCD = (unsigned char) (data & 0x04) >> 2;
-    D5_LCD = (unsigned char) (data & 0x02) >> 1;
-    D4_LCD = (unsigned char) (data & 0x01);
+    D7_LCD = (unsigned) (data & 0x08) >> 3;
+    D6_LCD = (unsigned) (data & 0x04) >> 2;
+    D5_LCD = (unsigned) (data & 0x02) >> 1;
+    D4_LCD = (unsigned) (data & 0x01);
 
     E_write();
 }
@@ -142,17 +142,17 @@ void send_data_8bit(unsigned char data) {
     
     start_data_8_bit();
     //high
-    D7_LCD = (unsigned char) (data & 0x80) >> 7;
-    D6_LCD = (unsigned char) (data & 0x40) >> 6;
-    D5_LCD = (unsigned char) (data & 0x20) >> 5;
-    D4_LCD = (unsigned char) (data & 0x10) >> 4;
+    D7_LCD = (unsigned) (data & 0x80) >> 7;
+    D6_LCD = (unsigned) (data & 0x40) >> 6;
+    D5_LCD = (unsigned) (data & 0x20) >> 5;
+    D4_LCD = (unsigned) (data & 0x10) >> 4;
 
     E_write();
     //low
-    D7_LCD = (unsigned char) (data & 0x08) >> 3;
-    D6_LCD = (unsigned char) (data & 0x04) >> 2;
-    D5_LCD = (unsigned char) (data & 0x02) >> 1;
-    D4_LCD = (unsigned char) (data & 0x01);
+    D7_LCD = (unsigned) (data & 0x08) >> 3;
+    D6_LCD = (unsigned) (data & 0x04) >> 2;
+    D5_LCD = (unsigned) (data & 0x02) >> 1;
+    D4_LCD = (unsigned) (data & 0x01);
 
     E_write();
 }

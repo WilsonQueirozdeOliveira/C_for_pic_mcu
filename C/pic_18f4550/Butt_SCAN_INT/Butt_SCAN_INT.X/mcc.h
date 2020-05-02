@@ -81,9 +81,29 @@
 
 #define _XTAL_FREQ 48000000
 
-#define TRIS_LED  TRISBbits.RB0
-#define LED LATBbits.LATB0
-#define preset_TMR1 0x0000 
+#define TRIS_LEDs  TRISB
+
+#define PORT_LEDs PORTB
+
+#define LED_LD2 LATBbits.LATB0
+#define LED_LD3 LATBbits.LATB1
+#define LED_LD4 LATBbits.LATB2
+#define LED_LD5 LATBbits.LATB3
+#define LED_LD6 LATBbits.LATB4
+#define LED_LD7 LATBbits.LATB5
+#define LED_LD8 LATBbits.LATB6
+#define LED_LD9 LATBbits.LATB7
+
+
+#define TRIS_B1 TRISEbits.RE0
+#define TRIS_B2 TRISEbits.RE1
+#define TRIS_B3 TRISEbits.RE2
+#define B1  PORTEbits.RE0
+#define B2  PORTEbits.RE1
+#define B3  PORTEbits.RE2
+
+#define preset_TMR0 0x0000  // <TMR0H:TMR0L>
+#define preset_TMR1 0x0000  // <TMR1H:TMR1L>
 
 void CONFIG_mcc(void);
 
