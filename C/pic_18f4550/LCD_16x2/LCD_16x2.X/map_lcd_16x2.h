@@ -5,6 +5,9 @@
  * 
  */
 
+#ifndef __MAPLCD16X2_H
+#define	__MAPLCD16X2_H
+
 /*map lcd 16x2
  * model = HD44780U
  */
@@ -99,3 +102,5 @@
 #define cursor_LxC_1x13 0xCD
 #define cursor_LxC_1x14 0xCE
 #define cursor_LxC_1x15 0xCF
+
+#endif
