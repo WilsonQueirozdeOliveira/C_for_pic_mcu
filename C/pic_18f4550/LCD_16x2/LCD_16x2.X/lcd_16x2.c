@@ -7,6 +7,7 @@
 
 #include "mcc.h"
 #include "lcd_16x2.h"
+#include "map_lcd_16x2.h"
 
 void screen_1() {
     /*

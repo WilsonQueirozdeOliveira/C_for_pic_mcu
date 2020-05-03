@@ -11,7 +11,7 @@ __interrupt (low_priority) void low_ISR(void) {
     if (INTCONbits.T0IE && INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
         TMR0 = preset_TMR0;
-        LED = (unsigned char) !LED;
+        LED = 1;
         screen_1(); 
     }
 }
@@ -22,7 +22,7 @@ void main(void) {
     CONFIG_lcd16x2();
     /*Variables*/
     while (1) {
-        
+        LED = 0;
     }
     return;
 }

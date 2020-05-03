@@ -5,9 +5,6 @@
  * 
  */
 
-#ifndef __LCD_16X2_H
-#define	__LCD_16X2_H
-
 /*LCD pins*/
 #define RS_LCD   LATDbits.LATD1
 #define E_LCD     LATDbits.LATD0
@@ -50,5 +47,3 @@ void start_data_8_bit(void);
 
 void E_write(void);
 /*LCD Initialization*/
-
-#endif

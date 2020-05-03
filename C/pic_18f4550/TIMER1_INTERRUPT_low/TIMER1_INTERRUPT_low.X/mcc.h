@@ -5,9 +5,6 @@
  * 
  */
 
-#ifndef __MCC_H
-#define	__MCC_H
-
 // PIC18F4550 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -86,5 +83,3 @@
 #define preset_TMR1 0x0000 
 
 void CONFIG_mcc(void);
-
-#endif
