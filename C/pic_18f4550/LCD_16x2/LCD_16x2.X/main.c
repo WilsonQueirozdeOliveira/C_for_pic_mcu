@@ -12,7 +12,7 @@ __interrupt (low_priority) void low_ISR(void) {
         INTCONbits.TMR0IF = 0;
         TMR0 = preset_TMR0;
         LED = 1;
-        screen_1(); 
+        screen_1();
     }
 }
 
