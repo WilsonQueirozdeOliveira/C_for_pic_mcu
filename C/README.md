@@ -1,5 +1,5 @@
 # Codes for pic mcu with C language
-pic_18f4550:
+##pic_18f4550:
 IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
     
 	BLINK LED RB0
@@ -12,7 +12,7 @@ IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
 	SPI //coming soon
 	CAN (mcp2515) //coming soon
 
-pic_12c508a:
+##pic_12c508a:
 IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
 
 	BLINK LED
