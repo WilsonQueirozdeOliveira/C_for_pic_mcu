@@ -5,11 +5,22 @@
  * 
  */
 
+// PIC12C508A Configuration Bit Settings
 
+// 'C' source line config statements
+
+// CONFIG
+#pragma config OSC = IntRC      // Oscillator selection bits (internal RC oscillator)
+#pragma config WDT = OFF        // Watchdog timer enable bit (WDT disabled)
+#pragma config CP = OFF         // Code protection bit (Code protection off)
+#pragma config MCLRE = OFF      // MCLR enable bit (MCLR tied to VDD, (Internally))
+
+// #pragma config statements should precede project file includes.
+// Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
 
-#define _XTAL_FREQ 48000000
+#define _XTAL_FREQ 4000000
 
 #define TRIS_LED  TRIS
 #define LED GP0
