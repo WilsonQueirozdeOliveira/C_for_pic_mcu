@@ -16,3 +16,4 @@ IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
 IDE: MPLAB X v3.65 Compiler XC8 v1.45 (Free Mode) (Author: Wilson Queiroz)
 
 	BLINK LED
+	Timer0_Blink
