@@ -10,13 +10,13 @@
 void CONFIG_mcc(void) {
     TRIS_LED = 0b11111110;
     OPTION = 0b00000111;
-    timer = 0;
+    Timer = 0;
 }
 
 void blink_LED(void) {
-    if ( (unsigned char) timer > 194) {
+    if ( (unsigned char) Timer > 194) {
             LED = (unsigned char) !LED;
-            timer = 0;
+            Timer = 0;
     }
     return;
 }

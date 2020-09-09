@@ -24,8 +24,7 @@
 
 #define TRIS_LED  TRIS
 #define LED GP0
-#define timer TMR0
+#define Timer TMR0
 
 void CONFIG_mcc(void);
 void blink_LED(void);
-
