@@ -6,6 +6,7 @@
  */
 
 #include "mcc.h"
+#include <stdlib.h>
 #include "lcd_16x2.h"
 #include "map_lcd_16x2.h"
 

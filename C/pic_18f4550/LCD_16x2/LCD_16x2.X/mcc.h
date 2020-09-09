@@ -79,7 +79,6 @@
 
 #include <xc.h>
 
-#include <stdlib.h>
 #include "lcd_16x2.h"
 
 
