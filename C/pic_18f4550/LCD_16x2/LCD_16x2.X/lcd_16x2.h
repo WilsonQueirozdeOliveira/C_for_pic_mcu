@@ -8,6 +8,9 @@
 #ifndef __LCD16X2_H
 #define	__LCD16X2_H
 
+#include <stdlib.h>
+#include "map_lcd_16x2.h"
+
 /*LCD pins*/
 #define RS_LCD   LATDbits.LATD1
 #define E_LCD     LATDbits.LATD0

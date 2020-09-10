@@ -11,7 +11,6 @@ void CONFIG_mcc(void) {
 
     /*config IO*/
     TRIS_LED = 0;
-    LCD_trisd = 0X00;/*LCD output*/
     ADCON1 = 0x0F;/*OFF ADC*/
     /*config IO*/
 

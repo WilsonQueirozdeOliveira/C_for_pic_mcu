@@ -7,7 +7,6 @@
 
 #include "mcc.h"
 #include "lcd_16x2.h"
-#include "map_lcd_16x2.h"
 
 void screen_1() {
     /*
@@ -77,6 +76,8 @@ void CONFIG_lcd16x2(void) {
      * HD44780U
      * Initialization 4-Bit Interface
      */
+    LCD_trisd = 0X00;/*LCD output*/
+    
     __delay_ms(40);
     //step 1 (0x03)   
     __delay_ms(15); //wait 15ms for 4.5V , wait 40ms for 2.7V 

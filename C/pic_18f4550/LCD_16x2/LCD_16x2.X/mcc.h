@@ -78,7 +78,6 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
-#include <stdlib.h>
 #include "lcd_16x2.h"
 
 
